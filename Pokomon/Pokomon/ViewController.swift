@@ -12,9 +12,38 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/ditto")
+        
+        let session = URLSession(configuration: .default)
+        
+        let task = session.dataTask(with: url!) { (data, respond, error) in
+            if error != nil {
+                print(error as Any)
+                return
+        }
+            print(data as Any)
+           
+        }
+         task.resume()
     }
+        
+        
+        
+
+    
+    
+    
+        
+    }
+    
+    
+
+    
+    
+    
+    
+    
 
 
-}
 
