@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		774FA1D624AA5C4400D3A250 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FA1D524AA5C4400D3A250 /* FetchData.swift */; };
 		774FA1D824AA5F0500D3A250 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FA1D724AA5F0500D3A250 /* Pokemon.swift */; };
+		774FA1DA24AA7C2F00D3A250 /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FA1D924AA7C2F00D3A250 /* MDTableViewCell.swift */; };
+		774FA1DC24AA916100D3A250 /* thumbOne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 774FA1DB24AA916100D3A250 /* thumbOne.jpg */; };
 		CD0BD2F724A86C1F00E036AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0BD2F624A86C1F00E036AE /* AppDelegate.swift */; };
 		CD0BD2F924A86C1F00E036AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0BD2F824A86C1F00E036AE /* ViewController.swift */; };
 		CD0BD2FC24A86C1F00E036AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0BD2FA24A86C1F00E036AE /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		774FA1D524AA5C4400D3A250 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		774FA1D724AA5F0500D3A250 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		774FA1D924AA7C2F00D3A250 /* MDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
+		774FA1DB24AA916100D3A250 /* thumbOne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbOne.jpg; sourceTree = "<group>"; };
 		CD0BD2F324A86C1F00E036AE /* Pokomon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokomon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0BD2F624A86C1F00E036AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD0BD2F824A86C1F00E036AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				CD0BD2FA24A86C1F00E036AE /* Main.storyboard */,
+				774FA1D924AA7C2F00D3A250 /* MDTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 				774FA1D324AA5B3100D3A250 /* Models */,
 				774FA1D424AA5B3800D3A250 /* NetWorkings */,
 				CD0BD2FD24A86C2100E036AE /* Assets.xcassets */,
+				774FA1DB24AA916100D3A250 /* thumbOne.jpg */,
 				CD0BD2FF24A86C2100E036AE /* LaunchScreen.storyboard */,
 				CD0BD30224A86C2100E036AE /* Info.plist */,
 			);
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0BD30124A86C2100E036AE /* LaunchScreen.storyboard in Resources */,
+				774FA1DC24AA916100D3A250 /* thumbOne.jpg in Resources */,
 				CD0BD2FE24A86C2100E036AE /* Assets.xcassets in Resources */,
 				CD0BD2FC24A86C1F00E036AE /* Main.storyboard in Resources */,
 			);
@@ -176,6 +183,7 @@
 				CD0BD2F924A86C1F00E036AE /* ViewController.swift in Sources */,
 				774FA1D824AA5F0500D3A250 /* Pokemon.swift in Sources */,
 				774FA1D624AA5C4400D3A250 /* FetchData.swift in Sources */,
+				774FA1DA24AA7C2F00D3A250 /* MDTableViewCell.swift in Sources */,
 				CD0BD2F724A86C1F00E036AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6AY5G84ET7;
 				INFOPLIST_FILE = Pokomon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mohammed.Pokomon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,6 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6AY5G84ET7;
 				INFOPLIST_FILE = Pokomon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mohammed.Pokomon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

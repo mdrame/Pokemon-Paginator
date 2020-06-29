@@ -7,16 +7,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "12A1FAC1-1B55-43A2-A140-75533653A4F1"
+            uuid = "1C4E6254-F63C-4DD4-B506-FFB368EEE9E7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pokomon/NetWorkings/FetchData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "fetchPokomon(urlValue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE3DB76F-0B43-4900-8B2F-B4885AD007FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokomon/Controllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "mainTableViweConstrain()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A3F4638-CC82-4F7C-ABA1-3A3FFB7183C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokomon/Views/MDTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "MDTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70A3873B-C272-48B8-8281-33D6A6A14CB8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokomon/Views/MDTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "fetchPokomon(urlValue:)"
+            landmarkName = "pokemonObject(object:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70A3873B-C272-48B8-8281-33D6A6A14CB8 - 1b742a1518d75c61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokomon.MDTableViewCell.pokemonObject(object: Pokomon.Pokemon) -&gt; ()"
+                  moduleName = "Pokomon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammeddrame/Documents/dev/swift/school/1.3/Pokemon-Paginator/Pokomon/Pokomon/Views/MDTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "735">
+               </Location>
+               <Location
+                  uuid = "70A3873B-C272-48B8-8281-33D6A6A14CB8 - 2a1720ed90dc0a45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Pokomon.MDTableViewCell.pokemonObject(object: Pokomon.Pokemon) -&gt; ()"
+                  moduleName = "Pokomon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohammeddrame/Documents/dev/swift/school/1.3/Pokemon-Paginator/Pokomon/Pokomon/Views/MDTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "203">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE9D90BA-FA61-446F-8866-444A1E426760"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokomon/Views/MDTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "pokemonObject(object:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

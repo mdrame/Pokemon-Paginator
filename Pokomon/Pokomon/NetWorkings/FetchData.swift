@@ -8,18 +8,17 @@
 
 import Foundation
 
-
-
-protocol DecodedDataListOfObject {
-    func pokemonObject(object: [Pokemon] )
+protocol DecodedData {
+    func object(data: [Pokemon])
 }
 
+
 class FetchData {
+  
     
-    // MARK: Protocol Instances
-    var pokemonDataFromNetworkingLayer: DecodedDataListOfObject!
+    var objectDelegate: DecodedData!
     
-    func fetchPokomon(urlValue: String) {
+    func fetchPokomon(urlValue: String){
         if let url = URL(string: urlValue) {
             let urlRequest = URLRequest(url: url)
             let session = URLSession(configuration: .default)
@@ -30,14 +29,18 @@ class FetchData {
                 
                 guard let data = data else { return }
                 let listOfDedodedJson = self.decodedJSON(data: data)
-                self.pokemonDataFromNetworkingLayer.pokemonObject(object: listOfDedodedJson)
+//                print(listOfDedodedJson)
+                DispatchQueue.main.async {
+                    self.objectDelegate.object(data: listOfDedodedJson)
+                }
+                
+               
+                
             }
-            
-            
-           
-            
             task.resume()
+            
         }
+      
        
     }
     
