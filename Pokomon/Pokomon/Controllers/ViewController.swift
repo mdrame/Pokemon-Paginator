@@ -8,8 +8,38 @@
 
 import UIKit
 
-class ViewController: UIViewController, DecodedDataListOfObject {
+class ViewController: UIViewController, DecodedDataListOfObject, UITableViewDelegate, UITableViewDataSource {
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addingViews()
+//        networkingModel.fetchPokomon(urlValue: "https://pokeapi.co/api/v2/pokemon?limit=100")
+//        NetworkingProtocle()
+        
+    }
+    
+    // mainTableViwe
+    
+    lazy var mainTableView: UITableView = {
+        let mainTableViwe = UITableView(frame: .zero)
+        mainTableViwe.translatesAutoresizingMaskIntoConstraints = false
+//        mainTableViwe.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+//        mainTableViwe.rowHeight = CGFloat(50)
+        mainTableViwe.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        return mainTableViwe
+    }()
+    
+    // mainTableViwe Constrain
+    
+    func mainTableViweConstrain() {
+        NSLayoutConstraint.activate([
+            mainTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            mainTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            mainTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            mainTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+        ])
+    }
     
     
     
@@ -17,7 +47,7 @@ class ViewController: UIViewController, DecodedDataListOfObject {
     let networkingModel = FetchData()
     
     
-    // Update UI using this protocle
+    // Update tableview using this protocle
     func pokemonObject(object: [Pokemon]) {
         for pokemons in object {
             print("Pokemon Name: \(pokemons.name)")
@@ -30,13 +60,27 @@ class ViewController: UIViewController, DecodedDataListOfObject {
         networkingModel.pokemonDataFromNetworkingLayer = self
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        networkingModel.fetchPokomon(urlValue: "https://pokeapi.co/api/v2/pokemon?limit=100")
-        NetworkingProtocle()
-        
+    // Creating UIKit view
+    func addingViews() {
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        view.addSubview(mainTableView)
+        mainTableViweConstrain()
     }
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        return UITableViewCell()
+    }
+    
+    
     
     
     
