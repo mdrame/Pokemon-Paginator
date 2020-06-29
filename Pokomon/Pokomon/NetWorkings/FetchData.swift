@@ -8,7 +8,16 @@
 
 import Foundation
 
+
+
+protocol DecodedDataListOfObject {
+    func pokemonObject(object: [Pokemon] )
+}
+
 class FetchData {
+    
+    // MARK: Protocol Instances
+    var pokemonDataFromNetworkingLayer: DecodedDataListOfObject!
     
     func fetchPokomon(urlValue: String) {
         if let url = URL(string: urlValue) {
@@ -20,23 +29,30 @@ class FetchData {
                 }
                 
                 guard let data = data else { return }
-                self.decodeJSON(data: data)
-                print(data)
-                
+                let listOfDedodedJson = self.decodedJSON(data: data)
+                self.pokemonDataFromNetworkingLayer.pokemonObject(object: listOfDedodedJson)
             }
+            
+            
+           
+            
             task.resume()
         }
+       
     }
     
     
-    func decodeJSON(data: Data?) {
+    func decodedJSON(data: Data?)->[Pokemon]{
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Result.self , from: data!)
-            print(decodedData.results)
-        } catch {
+            let pokemonObject = decodedData.results
+            return pokemonObject
+        }
+        catch {
             print("Retrive data unable to decode 📡❌")
         }
+        return []
     }
     
     

@@ -19,3 +19,4 @@ struct Result: Codable {
     var next: String
 }
 
+//let list = [Pokemon(name: "Moh", url: "www.h.com",Pokemon(name: "John", url: "www.j.com"))
