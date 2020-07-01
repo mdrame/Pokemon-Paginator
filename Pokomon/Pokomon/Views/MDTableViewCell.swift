@@ -14,6 +14,10 @@ class MDTableViewCell: UITableViewCell {
     
     
     static let cellIdentifier = "pokemonCell"
+                                                            
+    
+    
+         
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,17 +33,10 @@ class MDTableViewCell: UITableViewCell {
     // Update tableview using this protocle
     func pokemonObject(object: Pokemon) {
         textLabel?.text = object.name
-        guard let imageURL = URL(string: object.url) else {
-            print("image url not found ")
-            return }
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            let image = UIImage(data: imageData)
-            DispatchQueue.main.async {
-                self.imageView?.image = image
-            }
-        }
+        print(object.url)
+
 //        imageView?.image = UIImage(named: "thumbOne.jpg")
+   
     }
     
     

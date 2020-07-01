@@ -22,15 +22,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //        networkingModel.objectDelegate = self
         networkingModel.fetchPokomon(urlValue: "https://pokeapi.co/api/v2/pokemon?limit=10") { (listOfPokemons) in
             self.list = listOfPokemons
+                        print(self.list)
         }
+        
+        
     }
-    
     
     
     // MARK: Instances
     let networkingModel = FetchData()
+   
     
-
+    
     // MARK: UIKit view
     func addingViews() {
         mainTableView.delegate = self
@@ -48,10 +51,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             mainTableView.reloadData()
         }
     }
-    //    func object(data: [Pokemon]) {
-    //        list = data
-    //        mainTableView.reloadData()
-    //    }
+    
+   
     
     
     
@@ -96,7 +97,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: MDTableViewCell.cellIdentifier, for: indexPath) as! MDTableViewCell
         //        cell.textLabel?.text = "dfghj"
         cell.pokemonObject(object: list[indexPath.row])
-        print("in cell \(list)")
+        
+                print("in cell \(list)")
         return cell
     }
     

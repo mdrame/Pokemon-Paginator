@@ -20,3 +20,16 @@ struct Result: Codable {
 }
 
 //let list = [Pokemon(name: "Moh", url: "www.h.com",Pokemon(name: "John", url: "www.j.com"))
+struct SpecificPokemon: Codable {
+    var sprites: PokemonImage
+}
+
+struct PokemonImage: Codable {
+    var front: String
+    var back: String
+    
+    enum CodingKeys: String, CodingKey {
+        case front = "front_default"
+        case back = "back_default"
+    }
+}
