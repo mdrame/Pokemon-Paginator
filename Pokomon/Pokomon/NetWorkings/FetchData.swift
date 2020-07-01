@@ -7,42 +7,46 @@
 //
 
 import Foundation
+import UIKit
 
-protocol DecodedData {
-    func object(data: [Pokemon])
-}
+//protocol DecodedData {
+//    func object(data: [Pokemon])
+//}
 
 
 class FetchData {
   
+    // catch established
+     let catchImages = NSCache<NSString, UIImage>()
     
-    var objectDelegate: DecodedData!
     
-    func fetchPokomon(urlValue: String){
+//    var objectDelegate: DecodedData!
+    
+    func fetchPokomon(urlValue: String, completion: @escaping (_ : [Pokemon])-> Void) {
         if let url = URL(string: urlValue) {
             let urlRequest = URLRequest(url: url)
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: urlRequest) { (data, respond, error) in
+               
                 if error != nil {
                     print(error?.localizedDescription)
                 }
+                guard let httpRespond = respond as? HTTPURLResponse, httpRespond.statusCode == 200 else { return }
                 
                 guard let data = data else { return }
                 let listOfDedodedJson = self.decodedJSON(data: data)
-//                print(listOfDedodedJson)
-                DispatchQueue.main.async {
-                    self.objectDelegate.object(data: listOfDedodedJson)
-                }
-                
                
-                
+                DispatchQueue.main.async {
+//                    self.objectDelegate.object(data: listOfDedodedJson)
+                    completion(listOfDedodedJson)
+                    
+                }
             }
             task.resume()
-            
         }
-      
-       
     }
+    
+    
     
     
     func decodedJSON(data: Data?)->[Pokemon]{

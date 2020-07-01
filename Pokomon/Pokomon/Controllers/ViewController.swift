@@ -14,13 +14,24 @@ import UIKit
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DecodedData {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addingViews()
+        //        networkingModel.objectDelegate = self
+        networkingModel.fetchPokomon(urlValue: "https://pokeapi.co/api/v2/pokemon?limit=10") { (listOfPokemons) in
+            self.list = listOfPokemons
+        }
+    }
+    
+    
     
     // MARK: Instances
     let networkingModel = FetchData()
     
-    
-    // Creating UIKit view
+
+    // MARK: UIKit view
     func addingViews() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
@@ -30,24 +41,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     // protocol implimentations
-    var list: [Pokemon] = []
-    func object(data: [Pokemon]) {
-        list = data
-        mainTableView.reloadData()
+    var list: [Pokemon] = [] {
+        didSet {
+            mainTableView.reloadData()
+        } willSet {
+            mainTableView.reloadData()
+        }
     }
+    //    func object(data: [Pokemon]) {
+    //        list = data
+    //        mainTableView.reloadData()
+    //    }
     
     
     
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addingViews()
-        networkingModel.objectDelegate = self
-        networkingModel.fetchPokomon(urlValue: "https://pokeapi.co/api/v2/pokemon?limit=100")
-        
-    }
+    
     
     // mainTableViwe
     
@@ -55,7 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let mainTableViwe = UITableView(frame: .zero)
         mainTableViwe.translatesAutoresizingMaskIntoConstraints = false
         mainTableViwe.register(MDTableViewCell.self, forCellReuseIdentifier: MDTableViewCell.cellIdentifier)
-                mainTableViwe.rowHeight = CGFloat(100)
+        mainTableViwe.rowHeight = CGFloat(100)
         mainTableViwe.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         return mainTableViwe
     }()
