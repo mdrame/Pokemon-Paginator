@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //        networkingModel.objectDelegate = self
         networkingModel.fetchPokomon(urlValue: "https://pokeapi.co/api/v2/pokemon?limit=10") { (listOfPokemons) in
             self.list = listOfPokemons
-                        print(self.list)
+//            print(self.list)
         }
         
         
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: Instances
     let networkingModel = FetchData()
-   
+    
     
     
     // MARK: UIKit view
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-   
+    
     
     
     
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    
+    // MARK: Delegates & Data Source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -97,11 +97,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: MDTableViewCell.cellIdentifier, for: indexPath) as! MDTableViewCell
         //        cell.textLabel?.text = "dfghj"
         cell.pokemonObject(object: list[indexPath.row])
-        
-                print("in cell \(list)")
+//        print("in cell \(list)")
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DisplayPokemonViewController()
+        let pokemon = Pokemon(name: list[indexPath.row].name, url: list[indexPath.row].url)
+        vc.pokemonObject = pokemon
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     
     
